@@ -8,5 +8,6 @@ import { PasswordService } from 'src/password/password.service';
   controllers: [UsersController],
   providers: [UsersService, PasswordService],
   imports: [PrismaModule],
+  exports: [UsersService],
 })
 export class UsersModule {}
