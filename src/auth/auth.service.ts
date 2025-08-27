@@ -12,15 +12,15 @@ export class AuthService {
   async login(email: string, password: string) {
     const user = await this.usersService.findByEmail(email);
     if (!user) {
-      return 'Usuário não encontrado';
+      return 'E-mail informado não encontrado!';
     }
     const isPasswordValid = await this.passwordService.comparePassword(
       password,
       user.password,
     );
     if (!isPasswordValid) {
-      return 'Senha inválida';
+      return 'Senha de acesso inválida';
     }
-    return 'Logado com sucesso';
+    return 'Bem Vindo ACAPRA';
   }
 }
